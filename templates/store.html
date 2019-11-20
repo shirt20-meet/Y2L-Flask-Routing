@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>storee</title>
+	<title>store</title>
 	<style type="text/css">
 		.center {text-align: center;}
 		.card {
@@ -37,9 +37,9 @@
 <body style="background-color:white;">
 <h1 class="center">Welcome to the most awesome store existttttt</h1>
 <div class="center">
-	<a href="home.html">To home page</a>
+	<a href="/">To home page</a>
 </div><br>
-
+<!-- 
 <div class="card">
  	<img src="pouch.jpg" alt="Original black pouch" style="width:100%">
  	<h1>Noa's pouch</h1>
@@ -54,7 +54,20 @@
  	<p class="price">$1,000,000</p>
 	<p>noa fu**** hairrrrrr</p>
 	<p><button>Add to Cart</button></p>
+</div> -->
+
+{% for p in products %}
+<div class="card">
+ 	<img src="{{p.Picture_Link}}" alt="{{p.Name}}" style="width:100%">
+ 	<h1>{{p.Name}}</h1>
+ 	<p class="price">{{p.Price}}</p>
+	<p>{{p.Description}}</p>
+	<p><button>Add to Cart</button></p>
 </div>
+{% endfor %}
+
+
+
 
 </body>
 </html>
