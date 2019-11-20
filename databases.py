@@ -41,8 +41,11 @@ def query_by_id(their_id):
 	product = session.query(Product).filter_by(id = their_id).first()
 	return product
 
-def add_to_cart(ProductID):
-	
+def add_to_cart(productID):
+	product=Cart(ProductID=productID)
+	session.add(product)
+	session.commit()
+
 
 	
 # add_product("Noa's Pouch","$20,000","pouch.jpg","The original pouch that Noa wore in her clip 'Pouch'")
