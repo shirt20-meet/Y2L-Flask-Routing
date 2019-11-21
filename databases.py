@@ -1,4 +1,4 @@
-from model import Base, Product
+from model import Base, Product, Cart
 
 
 from sqlalchemy import create_engine
