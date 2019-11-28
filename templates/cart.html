@@ -5,10 +5,14 @@
 </head>
 <body>
 
-<!-- Delete this section when you reach this file -->
-<h1 style="font-size: 55px;position: absolute;left: 41.5%;top:28%">Cart Function</h1>
-<h1 style="font-size: 70px;position: absolute;left: 40%;bottom:50%">Coming Soon</h1>
-<!-- ------------------ -->
+{% for p in products %}
+<div class="card">
+ 	<img src="{{p.Picture_Link}}" alt="{{p.Name}}" style="width:100%">
+ 	<h1>{{p.Name}}</h1>
+ 	<p class="price">{{p.Price}}</p>
+	<p>{{p.Description}}</p>
+</div>
+{% endfor %}
 
 </body>
 </html>

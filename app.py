@@ -21,7 +21,18 @@ def about_world():
 def add_cart(productID):
 	add_to_cart((productID))
 	return redirect(url_for("store_world"))
+	
+@app.route('/cart')
+def cart():
+	cart_products=[]
+	products=query_all()
+	cart_DB=session.query(Cart).all()
+	for p in products:
+		for c in cart_DB:
+			if p.id == c.ProductID:
+				cart_products.append(p)
 
+	return render_template("cart.html",products=cart_products)
 
 
 if __name__ == '__main__':
