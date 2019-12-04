@@ -34,6 +34,21 @@ def cart():
 
 	return render_template("cart.html",products=cart_products)
 
+@app.route('/control')
+def control ():
+return redirect(url_for("control.html"))
+
+@app.route('/login', methods=["POST", "GET"])
+def log_in():
+	if (request.method=="POST"):
+		username=request.form['username']
+		password=request.form['password']
+		if (username=='shir') and (password=='1234'):
+			return redirect(url_for('control'))
+		else:
+			return redirect(url_for('hello_world'))
+return render_template("login.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
